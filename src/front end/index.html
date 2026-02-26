@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Bookstore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Mini Bookstore</h1>
+            <p class="subtitle">Manage your books with ease</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="view">View Books</button>
+            <button class="tab-btn" data-tab="add">Add Book</button>
+            <button class="tab-btn" data-tab="search">Search</button>
+            <button class="tab-btn" data-tab="sell">Sell Book</button>
+        </nav>
+
+        <!-- View Books Tab -->
+        <div id="view" class="tab-content active">
+            <h2>📖 Book Inventory</h2>
+            <div id="books-list" class="books-grid">
+                <p class="loading">Loading books...</p>
+            </div>
+        </div>
+
+        <!-- Add Book Tab -->
+        <div id="add" class="tab-content">
+            <h2>➕ Add New Book</h2>
+            <form id="add-book-form" class="form">
+                <div class="form-group">
+                    <label for="book-id">Book ID:</label>
+                    <input type="number" id="book-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-title">Title:</label>
+                    <input type="text" id="book-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-author">Author:</label>
+                    <input type="text" id="book-author" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-price">Price ($):</label>
+                    <input type="number" id="book-price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-quantity">Quantity:</label>
+                    <input type="number" id="book-quantity" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Book</button>
+            </form>
+            <div id="add-message" class="message"></div>
+        </div>
+
+        <!-- Search Tab -->
+        <div id="search" class="tab-content">
+            <h2>🔍 Search Books</h2>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search by title or author...">
+                <button id="search-btn" class="btn btn-primary">Search</button>
+            </div>
+            <div id="search-results" class="books-grid"></div>
+        </div>
+
+        <!-- Sell Book Tab -->
+        <div id="sell" class="tab-content">
+            <h2>💰 Sell Book</h2>
+            <form id="sell-book-form" class="form">
+                <div class="form-group">
+                    <label for="sell-book-id">Book ID:</label>
+                    <input type="number" id="sell-book-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="sell-quantity">Quantity to Sell:</label>
+                    <input type="number" id="sell-quantity" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Sell</button>
+            </form>
+            <div id="sell-message" class="message"></div>
+        </div>
+
+        <footer>
+            <button id="save-btn" class="btn btn-success">💾 Save Inventory</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
